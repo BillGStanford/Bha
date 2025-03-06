@@ -1,0 +1,454 @@
+/* src/styles/global.css */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --royal-burgundy: #7b0828;
+  --royal-gold: #c9a963;
+  --royal-blue: #0f4c81;
+  --luxury-cream: #f8f5e9;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: #333333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+}
+
+.royal-gradient {
+  background: linear-gradient(90deg, var(--royal-burgundy) 0%, var(--royal-burgundy-dark) 100%);
+}
+
+.gold-gradient {
+  background: linear-gradient(90deg, var(--royal-gold) 0%, var(--royal-gold-dark) 100%);
+}
+
+.nav-link {
+  @apply text-white text-sm font-medium px-4 py-2 inline-block hover:text-royal-gold transition-colors duration-200;
+}
+
+/* Enhanced header styles */
+.page-title {
+  @apply text-3xl md:text-4xl font-serif font-bold text-royal-burgundy mb-4;
+}
+
+.section-title {
+  @apply text-2xl font-serif font-bold text-royal-burgundy mb-3;
+}
+
+/* Button styles */
+.btn-primary {
+  @apply bg-royal-burgundy hover:bg-royal-burgundy-dark text-white font-medium px-6 py-3 rounded transition-colors duration-200;
+}
+
+.btn-secondary {
+  @apply bg-royal-gold hover:bg-royal-gold-dark text-white font-medium px-6 py-3 rounded transition-colors duration-200;
+}
+
+.btn-outline {
+  @apply border border-royal-burgundy text-royal-burgundy hover:bg-royal-burgundy hover:text-white font-medium px-6 py-3 rounded transition-colors duration-200;
+}
+
+/* Add elegant animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--royal-burgundy);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--royal-burgundy-dark);
+}
+
+/* Base Theme Variables */
+:root {
+  /* Primary Colors */
+  --royal-blue: #1e3a8a;
+  --royal-burgundy: #800020;
+  --royal-gold: #d4af37;
+  --luxury-cream: #f8f5e6;
+  
+  /* Secondary Colors */
+  --royal-navy: #0a192f;
+  --royal-teal: #20494c;
+  --royal-slate: #3e4c59;
+  
+  /* Text Colors */
+  --text-primary: #333333;
+  --text-secondary: #555555;
+  --text-light: #777777;
+  
+  /* UI Elements */
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --card-shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --border-radius: 0.5rem;
+  --transition-speed: 300ms;
+}
+
+/* Government Pages Common Styles */
+.gov-page {
+  background-color: var(--luxury-cream);
+  min-height: 100vh;
+}
+
+/* Header Styles */
+.gov-header {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.gov-header-content {
+  position: relative;
+  z-index: 2;
+}
+
+.gov-header-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7));
+}
+
+.gov-header-title {
+  font-family: 'Serif', serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.gov-header-subtitle {
+  font-size: 1.25rem;
+  max-width: 36rem;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Content Styles */
+.gov-content {
+  padding: 3rem 1.5rem;
+}
+
+.gov-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Card Styles */
+.gov-card {
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+  overflow: hidden;
+  border-top: 4px solid transparent;
+}
+
+.gov-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.gov-card-content {
+  padding: 1.5rem;
+}
+
+.gov-card-date {
+  color: var(--text-light);
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.gov-card-title {
+  font-family: 'Serif', serif;
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.gov-card-excerpt {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.gov-card-link {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 500;
+  transition: color var(--transition-speed);
+}
+
+/* Search and Filter Styles */
+.gov-search-section {
+  max-width: 36rem;
+  margin: 0 auto 3rem;
+}
+
+.gov-search-bar {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.gov-search-input {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 3rem;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  transition: box-shadow var(--transition-speed), border-color var(--transition-speed);
+}
+
+.gov-search-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+}
+
+.gov-search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-light);
+}
+
+.gov-filter-panel {
+  background-color: white;
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  box-shadow: var(--card-shadow);
+  margin-bottom: 1.5rem;
+}
+
+.gov-filter-title {
+  font-family: 'Serif', serif;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.gov-filter-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .gov-filter-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.gov-filter-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  color: var(--text-secondary);
+}
+
+.gov-filter-select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
+  transition: box-shadow var(--transition-speed), border-color var(--transition-speed);
+}
+
+.gov-filter-select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+}
+
+.gov-active-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.gov-filter-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+}
+
+.gov-clear-filters {
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  display: inline-block;
+  transition: color var(--transition-speed);
+}
+
+/* Results Count Styles */
+.gov-results-count {
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+}
+
+/* Pagination Styles */
+.gov-pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.gov-pagination-list {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.gov-pagination-button {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+/* Themed variations */
+/* Directives Theme - burgundy primary */
+.directives-theme {
+  /* Specific colors for directives */
+  --primary-color: var(--royal-burgundy);
+  --primary-light: rgba(128, 0, 32, 0.1);
+  --primary-dark: #6a001a;
+  --accent-color: var(--royal-gold);
+}
+
+.directives-theme .gov-header {
+  background-color: var(--primary-color);
+}
+
+.directives-theme .gov-card {
+  border-top-color: var(--primary-color);
+}
+
+.directives-theme .gov-card-link {
+  color: var(--primary-color);
+}
+
+.directives-theme .gov-card-link:hover {
+  color: var(--accent-color);
+}
+
+.directives-theme .gov-search-input:focus {
+  border-color: var(--primary-color);
+}
+
+.directives-theme .gov-pagination-button.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.directives-theme .gov-pagination-button:not(.active) {
+  background-color: white;
+  color: var(--primary-color);
+}
+
+.directives-theme .gov-pagination-button:not(.active):hover {
+  background-color: #f3f4f6;
+}
+
+.directives-theme .gov-filter-tag {
+  background-color: var(--primary-light);
+  color: var(--primary-color);
+}
+
+.directives-theme .gov-clear-filters {
+  color: var(--primary-color);
+}
+
+.directives-theme .gov-clear-filters:hover {
+  color: var(--primary-dark);
+}
+
+/* Decrees Theme - gold primary */
+.decrees-theme {
+  /* Specific colors for decrees */
+  --primary-color: var(--royal-gold);
+  --primary-light: rgba(212, 175, 55, 0.1);
+  --primary-dark: #b8941f;
+  --accent-color: var(--royal-burgundy);
+}
+
+.decrees-theme .gov-header {
+  background-color: var(--primary-color);
+}
+
+.decrees-theme .gov-card {
+  border-top-color: var(--primary-color);
+}
+
+.decrees-theme .gov-card-link {
+  color: var(--primary-color);
+}
+
+.decrees-theme .gov-card-link:hover {
+  color: var(--accent-color);
+}
+
+.decrees-theme .gov-search-input:focus {
+  border-color: var(--primary-color);
+}
+
+.decrees-theme .gov-pagination-button.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.decrees-theme .gov-pagination-button:not(.active) {
+  background-color: white;
+  color: var(--primary-color);
+}
+
+.decrees-theme .gov-pagination-button:not(.active):hover {
+  background-color: #f3f4f6;
+}
+
+.decrees-theme .gov-filter-tag {
+  background-color: var(--primary-light);
+  color: var(--primary-color);
+}
+
+.decrees-theme .gov-clear-filters {
+  color: var(--primary-color);
+}
+
+.decrees-theme .gov-clear-filters:hover {
+  color: var(--primary-dark);
+}
